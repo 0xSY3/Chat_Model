@@ -3,6 +3,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { LoginFormProps } from "../types/formComponentProps";
 import { Label } from "../components/ui/label";
+import ConnectWalletButton from "../Components/ConnectWalletButton";
 
 export function UserAuthForm({ entityType }: LoginFormProps) {
   const signupUrl =
@@ -63,7 +64,7 @@ export function UserAuthForm({ entityType }: LoginFormProps) {
           >
             Sign in instead?
           </a>
-
+          <ConnectWalletButton />
           <Button type="submit">Sign Up</Button>
         </div>
       </form>
