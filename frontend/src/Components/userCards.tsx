@@ -130,7 +130,9 @@ export default function Component() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="ml-auto">Buy Now</Button>
+              <Button className="ml-auto">
+                <a href="/checkout">Buy Now</a>
+              </Button>
             </CardFooter>
           </Card>
         ))}

@@ -57,7 +57,7 @@ function AIApplicationForm() {
                   className="text-black placeholder:text-black"
                 />
               </div>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+              <div className="space-y-2">
                 <Label htmlFor="category" className="text-black">
                   Category of Plugin
                 </Label>

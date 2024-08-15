@@ -27,31 +27,31 @@ function AIApplicationForm() {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-black">
-                  Name of Binary File
+                  Name of Provider
                 </Label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Gemma"
+                  placeholder="Sam"
                   required
                   className="text-black placeholder:text-black"
                 />
               </div>
-              <div className="lg:text-5xl text-4xl font-bold text-black text-center pt-[2rem]">
+              <div className="lg:text-5xl text-4xl  text-black text-center pt-[2rem]">
                 <div className="space-y-2 flex flex-col items-start ">
                   <Label htmlFor="category" className="text-black">
-                    Category of Binary File
+                    Type of Compute
                   </Label>
                   <Input
                     id="category"
-                    placeholder="Image Classification"
+                    placeholder="GPU RTX 3090"
                     required
                     className="text-black placeholder:text-black"
                   />
                 </div>
                 <div className="space-y-2 mt-6 flex flex-col items-start ">
                   <Label htmlFor="status" className="text-black">
-                    Status of AI Model
+                    Compute Duration
                   </Label>
                   <Input
                     id="status"
@@ -61,31 +61,7 @@ function AIApplicationForm() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="description" className="text-black">
-                  Description of Binaries
-                </Label>
-                <Input
-                  id="description"
-                  type="text"
-                  placeholder=""
-                  required
-                  className="text-black placeholder:text-black"
-                />
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="link" className="text-black">
-                  URL of Binary File
-                </Label>
-                <Input
-                  id="link"
-                  type="text"
-                  placeholder=""
-                  required
-                  className="text-black placeholder:text-black"
-                />
-              </div>
               <div className="space-y-2">
                 <Label htmlFor="price" className="text-black">
                   Price for Listing
