@@ -2,6 +2,8 @@ import authRoutes from "./routes/auth";
 import aiApplication from "./routes/aiapplication";
 import aiBinaries from "./routes/aiBinaries";
 import aiPlugins from "./routes/aiPlugins";
+import aiApis from "./routes/aiApis";
+import aiCompute from "./routes/aiCompute";
 import express, { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import cors from "cors";
@@ -16,6 +18,8 @@ app.use("/auth", authRoutes);
 app.use("/api", aiApplication);
 app.use("/api", aiBinaries);
 app.use("/api", aiPlugins);
+app.use("/api", aiApis);
+app.use("/api", aiCompute);
 
 app.use((err: Error, req: Request, res: Response) => {
   console.error(err.stack);

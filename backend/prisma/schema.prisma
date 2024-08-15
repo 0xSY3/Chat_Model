@@ -56,3 +56,24 @@ model Plugin {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model Api {
+  id          Int      @id @default(autoincrement())
+  category    String
+  description String
+  url         String
+  price       Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Compute {
+  id          Int      @id @default(autoincrement())
+  name        String
+  type        String
+  duration    String
+  description String
+  price       Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

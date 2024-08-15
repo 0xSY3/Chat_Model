@@ -3,28 +3,28 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const createAiPlugin = async (req: Request, res: Response) => {
+export const createAiApis = async (req: Request, res: Response) => {
   try {
-    const { name, category, description, url, price } = req.body;
-    const aiPlugin = await prisma.plugin.create({
+    const { description, status, url, category, price } = req.body;
+    const aiApis = await prisma.api.create({
       data: {
-        name,
         category,
         description,
         url,
         price,
       },
     });
-    res.status(201).json(aiPlugin);
+
+    return res.status(201).json(aiApis);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
 };
 
-export const getAllAIPlugins = async (req: Request, res: Response) => {
+export const getAllAIApis = async (req: Request, res: Response) => {
   try {
-    const aiPlugins = await prisma.plugin.findMany();
-    res.status(200).json(aiPlugins);
+    const aiApis = await prisma.api.findMany();
+    res.status(200).json(aiApis);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
