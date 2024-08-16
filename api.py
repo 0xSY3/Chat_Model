@@ -54,5 +54,8 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
+    print("Starting server...")
+    port = os.getenv("PORT") 
+    host = os.getenv("HOST")
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host=str(host), port=int(port))
