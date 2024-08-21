@@ -1,0 +1,58 @@
+# version: '3.8'
+
+# services:
+#   app:
+#     image: my-fastapi-app
+#     build:
+#       context: .
+#     ports:
+#       - "8000:8000"
+#     env_file:
+#       - .env
+#     environment:
+#       HOST: 0.0.0.0
+#       PORT: 8000
+
+
+
+version: "1.0"
+
+services:
+  va-test:
+    image: my-fastapi-app
+    expose:
+      - port: 8000
+        as: 8000
+        to:
+          - global: true
+    env:
+      - HOST=0.0.0.0
+      - PORT=8000
+profiles:
+  name: va-testing
+  duration: 1h
+  tier:
+    - community
+  compute:
+    va-test:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 4Gi
+        storage:
+          - size: 20Gi
+  placement:
+    westcoast:
+      attributes:
+        region: us-west
+      pricing:
+        va-test:
+          denom: USDT
+          amount: 10000000
+
+deployment:
+  va-test:
+    westcoast:
+      profile: va-test
+      count: 1
